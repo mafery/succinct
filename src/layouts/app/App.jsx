@@ -1,8 +1,8 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.sass';
 
 function App() {
-  console.log(`1111`)
   return (
     <div className="App">
       <header className="App-header">

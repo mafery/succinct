@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.sass';
+// import './index.sass';
 import App from './layouts/app/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <div>index</div>
   </React.StrictMode>,
   document.getElementById('root')
 );
