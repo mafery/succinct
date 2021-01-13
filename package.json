@@ -2,9 +2,13 @@
   "name": "succinct",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config config/webpack.config.ts",
+    "dev": "node ./build/server.js",
+    "start": "webpack serve --open --config ./config/webpack.common.ts",
+    "dev-ts": "ts-node -P tsconfig-for-webpack-config.json -r tsconfig-paths/register ./build/server.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,36 @@
   "bugs": {
     "url": "https://github.com/mafery/succinct/issues"
   },
-  "homepage": "https://github.com/mafery/succinct#readme"
+  "homepage": "https://github.com/mafery/succinct#readme",
+  "dependencies": {
+    "@types/lodash": "^4.14.167",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "html-webpack-plugin": "^4.5.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.20",
+    "@types/webpack": "^4.41.26",
+    "@types/webpack-dev-server": "^3.11.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "csv-loader": "^3.0.3",
+    "express": "^4.17.1",
+    "file-loader": "^6.2.0",
+    "source-map-loader": "^2.0.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.14",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.1.3",
+    "webpack": "^5.12.3",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-middleware": "^4.0.3",
+    "webpack-dev-server": "^3.11.1",
+    "xml-loader": "^1.2.1"
+  }
 }
