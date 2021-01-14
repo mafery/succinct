@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config config/webpack.config.ts",
-    "dev": "node ./build/server.js",
-    "start": "webpack serve --open --config ./config/webpack.config.base.ts"
+    "build": "webpack --config config/webpack.prod.js",
+    "start": "webpack serve --open --config ./config/webpack.base.js",
+    "dev": "node ./build/server.js"
   },
   "repository": {
     "type": "git",
@@ -40,10 +40,12 @@
     "ts-loader": "^8.0.14",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
     "typescript": "^4.1.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^5.12.3",
     "webpack-cli": "^4.3.1",
     "webpack-dev-middleware": "^4.0.3",
     "webpack-dev-server": "^3.11.1",
+    "webpack-merge": "^5.7.3",
     "xml-loader": "^1.2.1"
   }
 }
