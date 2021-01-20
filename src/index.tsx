@@ -1,14 +1,11 @@
-import react from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import "./styles/index.css";
+import App from './views/app';
 
-function setElement(){
-    var e = document.createElement('div');
-    e.append('Hello world! \t hello react! \t hello webpack! \t hello typescript!');
-
-    var $root = document.getElementById("root");
-
-    $root.append(e);
-}
-
-setElement();
+ReactDOM.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);

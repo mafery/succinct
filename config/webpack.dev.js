@@ -1,10 +1,15 @@
 const path = require("path");
+const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const configBase = require("./webpack.base");
 
 module.exports = merge(configBase, {
     mode: "development",
     devtool: 'inline-source-map',
+    plugins: [
+        // 热更新
+        new webpack.HotModuleReplacementPlugin(),
+    ],
     devServer: {
         hot: true, //热更新
         open: true, //是否自动打开默认浏览器
