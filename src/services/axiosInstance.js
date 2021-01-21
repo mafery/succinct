@@ -1,5 +1,4 @@
-import axios from 'axios';
-import { config } from 'webpack';
+import axios from 'axios'
 
 const instance = axios.create({
     baseURL: ''
@@ -18,3 +17,5 @@ instance.interceptors.response.use((response) => {
 });
 
 export default instance;
+
+

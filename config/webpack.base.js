@@ -13,8 +13,7 @@ module.exports = {
         publicPath: "/"
     },
     resolve: {
-        // 按顺序解析以上扩展名的文件(必须添加，否则通过import进来的文件无法解析。import时可不写扩展名 默认值为 ['.wasm', '.mjs', '.js', '.json']
-        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        extensions: ['.js', '.ts', '.tsx', '.jsx', '.png', '.jpg', '.jpeg']
     },
     optimization: {
         splitChunks: {
@@ -30,7 +29,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(t|s)sx?$/,
+                test: /\.(t|j)sx?$/,
                 loader: "babel-loader",
                 exclude: /node_modules/,
                 options: {
@@ -41,9 +40,8 @@ module.exports = {
                     ],
                     plugins: [  
                         [
-                            "styled-components", {
-                            "displayName": true
-                            }
+                            "styled-components", 
+                            { "displayName": true }
                         ],
                         "macros",
                         "@babel/plugin-proposal-class-properties"
