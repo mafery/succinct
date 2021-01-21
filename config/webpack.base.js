@@ -32,6 +32,7 @@ module.exports = {
             {
                 test: /\.(t|s)sx?$/,
                 loader: "babel-loader",
+                exclude: /node_modules/,
                 options: {
                     presets: [
                       '@babel/preset-typescript',

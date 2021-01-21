@@ -15,10 +15,16 @@ module.exports = merge(configBase, {
         open: true, //是否自动打开默认浏览器
         port: 3000,//控制端口
         host: "localhost",//host地址
-        // historyApiFallback: true,
-        contentBase: path.resolve(__dirname, "../dist"),
-        // proxy:{
-        //     '/action':'http://127.0.0.1:8080/'
+        historyApiFallback: true,
+        publicPath: '/',
+        progress: true,
+        contentBase: path.resolve(__dirname, "dist"),
+        // proxy: {
+        //     '/api': {
+        //         target: 'http://192.168.50.183:21001/',
+        //         changeOrigin: true,
+        //         secure: false
+        //     }
         // }
     }
 })
