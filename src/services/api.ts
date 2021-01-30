@@ -1,9 +1,13 @@
-import axios, {} from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
-const instance = axios.create({
+const options: AxiosRequestConfig = {
     baseURL: '',
-    withCredentials: true
-})
+    withCredentials: true,
+    timeout: 20000,
+    // headers: {}
+}
+
+const instance = axios.create(options);
 
 instance.interceptors.request.use((resquest) => {
     return resquest;
@@ -17,4 +21,10 @@ instance.interceptors.response.use((response) => {
     return Promise.reject(error)
 })
 
-export default instance;
+export function axiosGet(url: string, params: any = {}): Promise<any> {
+    return instance.get(url, params);
+}
+
+export function axiosPost(url: string, params: any = {}, options: AxiosRequestConfig = {}): Promise<any> {
+    return instance.post(url, params, options);
+}
